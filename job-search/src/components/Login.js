@@ -3,6 +3,8 @@ import '../styles/Login.css';
 import BannerImage from '../assets/bg.avif'
 import {Link,useHistory} from 'react-router-dom'
 import Select from 'react-select';
+import Home from '../pages/Home';
+import Navbar from './Navbar';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -55,13 +57,9 @@ const Login = () => {
       history.push("/login");
     }
   }
-
-    
-    
-  
-
   return (
-    <div className="container" style={{ backgroundImage: `url(${BannerImage})` }}>
+    <div className="container" style={{ backgroundImage: `url(${BannerImage})` }}> 
+    <Navbar />
     <div className="login-container" >
       <h2>Login</h2>
       <form onSubmit={handleLogin}>
@@ -94,9 +92,9 @@ const Login = () => {
             required
           />
         </div>
-        
+
         <button type="submit" onClick={handleLogin}>Login</button>
-      
+
       </form>
     </div>
     </div>

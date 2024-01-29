@@ -13,7 +13,7 @@ const Registration = () => {
   const [branch,setbranch]=useState('');
   const [insti,setInsti]=useState('');
   const [skill,setskill]=useState([]);
-  const [role,setrole]=useState({label:"a",value:"a"});
+  const [role,setrole]=useState({label:"student",value:"student"});
   const skoptions = [
     { label: "Java", value: "Java" },
     { label: "Springboot", value: "Springboot" },
@@ -145,9 +145,14 @@ const Registration = () => {
 
   return (
     <div className="container" style={{ backgroundImage: `url(${BannerImage})` }}>
+          <div>
+            
+
+            
+          </div>
       {role.value!=null && <div className='login-container'>
           <label>Role:</label>
-          <Select
+          <Select 
         className="basic-single"
         classNamePrefix="select"
         onChange={setrole}

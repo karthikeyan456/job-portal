@@ -2,11 +2,15 @@ import React from "react";
 import { JobsList } from "../helpers/JobsList";
 import JobsItem from "../components/JobsItem";
 import '../styles/Jobs.css'
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 function Jobs() {
   return (
     <div className="Jobs">
-      <h1 className="jobTitle">JOBS LIST</h1>
+        <div className='Title'>
+        <h1>JOB LIST</h1>
+        <Link to="/Student"> BACK </Link>
+      </div>
       <div className="jobsList">
         {JobsList.map((jobsItem, key) => {
           return (

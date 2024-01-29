@@ -1,9 +1,11 @@
 import React from "react";
 import MultiplePizzas from "../assets/bg.jpg";
 import "../styles/About.css";
+import Navbar from "../components/Navbar";
 function About() {
   return (
     <div className="about">
+      <Navbar />
       <div
         className="aboutTop"
         style={{ backgroundImage: `url(${MultiplePizzas})` }}
