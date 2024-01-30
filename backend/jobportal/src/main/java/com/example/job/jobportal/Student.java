@@ -22,6 +22,11 @@ public class Student {
     private String institution;
     private String skills;
     private String password;
+    private String idx;
+
+    public void setIdx(String id){
+        idx=id;
+    }
 
 
 

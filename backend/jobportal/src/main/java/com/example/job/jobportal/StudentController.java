@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -28,17 +27,25 @@ public class StudentController {
     @PostMapping("/addstu") //To add a new student to the collection
     public String addStudent(@RequestBody Student st){
         List<Student> li=stu.findAll();
+
+        int idx=li.size()+1;//Generating the ID of the Student
+        String ids=Integer.toString(idx);
+        ids="JPSTU"+ids;
+        st.setIdx(ids);
+
         for(Student s:li){
-            if(s.getEmail().equals(st.getEmail())){
+            if(s.getEmail().equals(st.getEmail())){ //Checking if the student already exists
                 return "Exists Already";
             }
         }
         
-        stu.save(st);
+        stu.save(st);//Adding student details to the collection
         return "Added Successfully";
 
 
     }
+
+    //Login
     @CrossOrigin
     @PostMapping("/login")
     public ResponseEntity<Object> login(@RequestBody Login lg){

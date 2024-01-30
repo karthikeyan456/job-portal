@@ -22,6 +22,10 @@ public class Employer {
     private String location;
     private String description;
     private String password;
-    
+    private String idx;
+
+    public void setIdx(String id){
+        idx=id;
+    }
     
 }

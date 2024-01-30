@@ -73,6 +73,10 @@ const Registration = () => {
       lo+=loc[i].value+' ';
     }
     let d=descp;
+    if(cn.length===0 || cm.length===0 || cm.length===0 || cp.length===0 || lo.length===0){
+      alert("Invalid");
+      return;
+    }
 
     //Registration
     fetch("http://127.0.0.1:8080/addempl",{
@@ -87,7 +91,8 @@ const Registration = () => {
           cmail:cm,
           location:lo,
           description:d,
-          password:cp
+          password:cp,
+          id:0,
         }
       )
     }).then((res)=>{res.text()}).then((data)=>{console.log(data)});
