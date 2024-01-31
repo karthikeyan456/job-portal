@@ -161,7 +161,7 @@ const Registration = () => {
         className="basic-single"
         classNamePrefix="select"
         onChange={setrole}
-        
+        defaultValue={"Student"}
         name="Degree"
         options={roleoptions}
          />

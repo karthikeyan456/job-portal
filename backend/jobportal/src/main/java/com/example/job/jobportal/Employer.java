@@ -2,7 +2,8 @@
 package com.example.job.jobportal;
 
 
-import org.bson.types.Binary;
+
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import lombok.Getter;
@@ -22,6 +23,7 @@ public class Employer {
     private String location;
     private String description;
     private String password;
+    @Id
     private String idx;
 
     public void setIdx(String id){

@@ -68,6 +68,33 @@ public class EmployerController {
 
     }
 
+    @CrossOrigin
+    @PostMapping("/updateempl")
+    public String updateEmployee(@RequestBody Employer em){
+        List<Employer> li=emp.findAll();
+    
+        for(Employer i:li){
+            if(i.getIdx().equals(em.getIdx())){
+                 //Employer j=new Employer();
+                 i.setCmail(em.getCmail());
+                 i.setCname(em.getCname());
+                 i.setDescription(em.getDescription());
+                 i.setIdx(em.getIdx());
+                 String loc=i.getLocation();
+                 loc=em.getLocation()+loc;
+                 i.setLocation(loc);
+                 i.setPassword(i.getPassword());
+                 
+                 
+                 emp.save(i);
+                 break;
+            }
+        }
+
+
+        return "Updated";
+    }
+
     
     
     

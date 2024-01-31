@@ -33,7 +33,22 @@ function Employer(){
     function addJob(){
       history.push({
         pathname:"/addjobs",
-        state:{"empid":data['idx'],"loc":data["location"]}
+        state:{"empid":data['idx'],"loc":data["location"],"comp":d["cname"]}
+      });
+    }
+    function job(){
+      history.push({
+        pathname:"/empjobs",
+        state:{"id": data['idx']}
+      }
+  
+      );
+    }
+
+    function update(){
+      history.push({
+        pathname:"/empup",
+        state:{"empid":data['idx'],"loc":data["location"],"comp":data["cname"],"descp":data["about"],"mail":data["cmail"]}
       });
     }
         
@@ -41,7 +56,7 @@ function Employer(){
     
     return(
       <div>
-        <EmpNavbar />
+        <EmpNavbar/>
         <div className="home" style={{ backgroundImage: `url(${BannerImage})` }}>
         <div className="headerContainer">
           <h1>Employer Portal</h1>
@@ -57,6 +72,16 @@ function Employer(){
           
           
           <button onClick={addJob}> ADD JOB </button>
+
+          <button onClick={job}> VIEW JOBS </button>
+
+          <button onClick={update}>UPDATE</button>
+
+          <button>REMOVE JOB</button>
+
+          <button>APPLICATIONS</button>
+
+
           
         </div>
       </div>

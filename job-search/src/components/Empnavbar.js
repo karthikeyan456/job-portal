@@ -2,22 +2,27 @@ import React, { useState } from "react";
 import Logo from "../assets/logo.jpg";
 import { Link } from "react-router-dom";
 import "../styles/Navbar.css";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
-function EmpNavbar() {
+function EmpNavbar(props) {
   const [openLinks, setOpenLinks] = useState(false);
-
+  
   const toggleNavbar = () => {
     setOpenLinks(!openLinks);
   };
+  const history=useHistory();
+  
+
   return (
     <div className="navbar">
       <div className="leftSide" id={openLinks ? "open" : "close"}>
         <img src={Logo} />
+        <div><h3 style={{color:"white"}}>Job Search Portal</h3></div>
       </div>
       <div className="rightSide">
-        <Link to="/employer"> HOME </Link>
-        <Link to="/addjobs"> ADD JOBS </Link>
-        <Link to="/EmpAbout">ABOUT</Link>
+        
+        
+       
         <Link to="/">LOGOUT</Link>
         <button onClick={toggleNavbar}>
         </button>

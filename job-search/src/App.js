@@ -10,7 +10,9 @@ import student  from "./components/Student";
 import employer from "./components/Employer";
 import AddJobs from "./pages/AddJobs";
 import EmpAbout from "./pages/EmpAbout";
+import EmpJobs from "./pages/EmpJobs";
 import StuAbout from "./pages/StuAbout";
+import EmployerUpdate from "./components/EmployerUpdate";
 
 
 function App() {
@@ -29,6 +31,9 @@ function App() {
           <Route path="/StuAbout" exact component={StuAbout}/>
           <Route path="/employer" exact component={employer}/>
           <Route path="/EmpAbout" exact component={EmpAbout}/>
+          <Route path="/empjobs" exact component={EmpJobs}/>
+          <Route path="/empup" exact component={EmployerUpdate}/>
+
 
           
 

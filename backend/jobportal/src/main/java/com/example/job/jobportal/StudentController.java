@@ -10,6 +10,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 
@@ -71,5 +73,28 @@ public class StudentController {
 
 
         
+    }
+
+
+    @CrossOrigin
+    @GetMapping("/getstudata/{email}")
+    public Map<String,String>getStudentDetails(@PathVariable("email") String email){
+         Map<String,String> data=new HashMap<>();
+         List<Student> li=stu.findAll();
+         for(Student s: li){
+            if(s.getEmail().equals(email)){//Checking if a student has already registered the credentials
+                data.put("name",s.getName());
+                data.put("email",s.getEmail());
+                data.put("degree",s.getDegree());
+                data.put("branch",s.getBranch());
+                data.put("institution",s.getInstitution());
+                data.put("skills",s.getSkills());
+                data.put("idx",s.getIdx());
+            }
+        }
+        return data;
+
+         
+
     }
 }

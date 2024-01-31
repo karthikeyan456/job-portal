@@ -27,6 +27,44 @@ function AddJobs(){
   const[sal,setsal]=useState("");
   const[exp,setexp]=useState("");
   const[locs,setlocs]=useState("");
+  let lo="";
+
+  for(var i=0;i<locs.length;i++){
+    lo+=locs[i].value+' ';
+  }
+
+  function addnewjob(e){
+    e.preventDefault();
+    if(employerid.length===0 || jobtitle.length===0 || description.length===0 || sal.length===0 || exp.length===0 || lo.length===0){
+      
+    }
+    fetch("http://127.0.0.1:8080/addjob",{
+      method:"POST",
+      headers:{
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify(
+        {
+          empid: d["empid"],
+          jobid: d["empid"],
+          location: lo,
+          jobdesc:description,
+          sal:sal,
+          exp:exp,
+          open:"1",
+
+
+
+
+
+        }
+      )
+    }).then((res)=>{res.text()}).then((data)=>{console.log(data)});
+
+    alert("!!Job Posted Suceessfully!!");
+
+  }
 
 
   
@@ -42,14 +80,8 @@ function AddJobs(){
       <form /*onSubmit={handleERegistration}*/>
         
         <div className="form-group">
-          <label>Employer ID:</label>
-          <input
-            type="text"
-            value={d.empid}
-            onChange={(e)=>setempid(e.target.value)}
-            
-            
-          />
+          <label>Employer ID: {d["empid"]}</label>
+          
         <div></div>
         </div>
         
@@ -100,7 +132,7 @@ function AddJobs(){
           />
           
         </div>    
-        <button type="submi" >Add Job </button>
+        <button type="submit" onClick={addnewjob} >Add Job </button>
       
       </form>
     </div>

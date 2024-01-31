@@ -1,6 +1,7 @@
 package com.example.job.jobportal;
 
 
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import lombok.Getter;
@@ -22,6 +23,7 @@ public class Student {
     private String institution;
     private String skills;
     private String password;
+    @Id
     private String idx;
 
     public void setIdx(String id){
