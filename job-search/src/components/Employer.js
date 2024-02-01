@@ -51,6 +51,15 @@ function Employer(){
         state:{"empid":data['idx'],"loc":data["location"],"comp":data["cname"],"descp":data["about"],"mail":data["cmail"]}
       });
     }
+
+    function application(){
+      history.push(
+        {
+          pathname:"/empapp",
+          state:{"id":data["idx"]}
+        }
+      )
+    }
         
     
     
@@ -77,9 +86,9 @@ function Employer(){
 
           <button onClick={update}>UPDATE</button>
 
-          <button>REMOVE JOB</button>
+          
 
-          <button>APPLICATIONS</button>
+          <button onClick={application}>APPLICATIONS</button>
 
 
           

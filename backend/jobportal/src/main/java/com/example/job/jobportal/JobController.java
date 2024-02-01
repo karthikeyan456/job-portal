@@ -14,12 +14,17 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 @RestController
 public class JobController {
     
     @Autowired
     private JobRepository job;
+
+    @Autowired
+    private EmployerRepository emp;
 
 
    
@@ -57,6 +62,7 @@ public class JobController {
                 mp.put("jobdesc",j.getJobdesc());
                 mp.put("sal",j.getSal());
                 mp.put("exp",j.getExp());
+                mp.put("title",j.getTitle());
                 ma.add(mp);
             }
           }
@@ -78,6 +84,43 @@ public class JobController {
       }
       return "Job Applications Closed";
     }
+
+    @CrossOrigin
+    @GetMapping("/fetchalljobs")
+    public List<Map<String,String>> getAllJobs(){
+      List<Map<String,String>>ma=new ArrayList<>();
+      List<Job> jl=job.findAll();
+      List<Employer> el=emp.findAll();
+     
+      for(Job j:jl){
+        if(j.getOpen().equals("1")){
+          Map<String,String> mp=new HashMap<>();
+          for(Employer i:el){
+            
+            if(i.getIdx().equals(j.getEmpId())){
+                mp.put("name",i.getCname());
+                mp.put("empid",i.getIdx());
+            }
+
+          }
+          mp.put("jobid",j.getJobid());
+          mp.put("location",j.getLocation());
+          mp.put("jobdesc",j.getJobdesc());
+          mp.put("sal",j.getSal());
+          mp.put("exp",j.getExp());
+          mp.put("title",j.getTitle());
+          ma.add(mp);
+        }
+
+      }
+
+
+      return ma;
+
+      
+    }
+    
+    
 
 
     

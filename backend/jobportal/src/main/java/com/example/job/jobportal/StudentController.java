@@ -97,4 +97,27 @@ public class StudentController {
          
 
     }
+
+    @CrossOrigin
+    @PostMapping("/updatestudent")
+    public String updateEmployee(@RequestBody Student st){
+        List<Student> li=stu.findAll();
+        for(Student s:li){
+            if(s.getIdx().equals(st.getIdx())){
+                s.setBranch(st.getBranch());
+                s.setDegree(st.getDegree());
+                s.setInstitution(st.getInstitution());
+                s.setEmail(st.getEmail());
+                String sk=s.getSkills();
+                sk=sk+" "+st.getSkills();
+                s.setSkills(sk);
+                stu.save(s);
+
+            }
+        }
+
+
+        return "Updated";
+
+    }
 }

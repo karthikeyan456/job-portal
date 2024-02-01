@@ -13,6 +13,10 @@ import EmpAbout from "./pages/EmpAbout";
 import EmpJobs from "./pages/EmpJobs";
 import StuAbout from "./pages/StuAbout";
 import EmployerUpdate from "./components/EmployerUpdate";
+import StuJobs from "./pages/StuJobs";
+import StuApp from "./pages/StuApp";
+import StudentUpdate from "./components/StudentUpdate";
+import EmpApp from "./pages/EmpApp";
 
 
 function App() {
@@ -33,6 +37,10 @@ function App() {
           <Route path="/EmpAbout" exact component={EmpAbout}/>
           <Route path="/empjobs" exact component={EmpJobs}/>
           <Route path="/empup" exact component={EmployerUpdate}/>
+          <Route path="/stujobs" exact component={StuJobs}/>
+          <Route path="/stuapp" exact component={StuApp}/>
+          <Route path="/stuup" exact component={StudentUpdate}/>
+          <Route path="/empapp" exact component={EmpApp}/>
 
 
           

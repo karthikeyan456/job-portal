@@ -30,15 +30,16 @@ function Student(){
       onLoad();
     }
 
-    function addJob(){
+    function applications(){
       history.push({
-        pathname:"/addjobs",
-        state:{"empid":data['idx'],"loc":data["location"],"comp":d["cname"]}
+        pathname:"/stuapp",
+        state:{"id": data['idx']}
+
       });
     }
     function job(){
       history.push({
-        pathname:"/empjobs",
+        pathname:"/stujobs",
         state:{"id": data['idx']}
       }
   
@@ -47,8 +48,8 @@ function Student(){
 
     function update(){
       history.push({
-        pathname:"/empup",
-        state:{"empid":data['idx'],"loc":data["location"],"comp":data["cname"],"descp":data["about"],"mail":data["cmail"]}
+        pathname:"/stuup",
+        state:{"stuid":data['idx'],"name":data["name"],"degree":data["degree"],"branch":data["branch"],"mail":data["email"],"institution":data["institution"],"skills":data["skills"]}
       });
     }
         
@@ -60,21 +61,30 @@ function Student(){
         <div className="home" style={{ backgroundImage: `url(${BannerImage})` }}>
         <div className="headerContainer">
           <h1>Student Portal</h1>
-          <h3 style={{color:"white"}}>Student Name: {data["name"]}</h3>
+          <h2 style={{color:"white"}}>Student Name: {data["name"]}</h2>
 
-          <h3 style={{color:"white"}}>Student ID: {data["idx"]}</h3>
+          <h2 style={{color:"white"}}>Student ID: {data["idx"]}</h2>
           
-          <h3 style={{color:"white"}}>Degree: {data["degree"]}</h3>
-
-          <h3 style={{color:"white"}}>Branch: {data["branch"]}</h3>
-
-          <h3 style={{color:"white"}}>Institution: {data["institution"]}</h3>
-
-          <h3 style={{color:"white"}}>Registered Email: {data["email"]}</h3>
-
-          <h3 style={{color:"white"}}>Skills: {data["skills"]}</h3>
-
+          <h2 style={{color:"white"}}>Degree: {data["degree"]} </h2>
           
+          <h2 style={{color:"white"}}>Branch: {data["branch"]}</h2>
+
+
+
+          <h2 style={{color:"white"}}>Institution: {data["institution"]}</h2>
+
+          <h2 style={{color:"white"}}>Registered Email: {data["email"]}</h2>
+
+          <h2 style={{color:"white"}}>Skills: {data["skills"]}</h2>
+
+          <button style={{color:"white"}} onClick={job}>JOBS</button>
+
+          <button style={{color:"white",fontSize:"10px"}} onClick={applications}>SUBMITTED APPLICATIONS</button>
+
+          <button style={{color:"white",fontSize:"15px"}} onClick={update}>UPDATE</button>
+
+
+
 
 
           

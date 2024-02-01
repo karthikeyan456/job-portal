@@ -48,11 +48,13 @@ function AddJobs(){
         {
           empid: d["empid"],
           jobid: d["empid"],
+          title:jobtitle,
           location: lo,
           jobdesc:description,
           sal:sal,
           exp:exp,
           open:"1",
+          
 
 
 

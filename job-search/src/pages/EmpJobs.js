@@ -9,6 +9,7 @@ function JobPost(props){
       <h4> Employer ID :{props.employerid} </h4>
       <h4> Job ID: {props.jobid}</h4>
       <h4> Location: {props.location}</h4>
+      <h4> Job Title: {props.title}</h4>
       <h4>Description: {props.description}</h4>
       <h4>Salary: {props.salary}</h4>
       <h4>Experience: {props.experience}</h4>
@@ -58,6 +59,7 @@ function EmpJobs(){
                                description={i.jobdesc}
                                salary={i.sal}
                                experience={i.exp}
+                               title={i.title}
                             /> 
                         );
                     })}

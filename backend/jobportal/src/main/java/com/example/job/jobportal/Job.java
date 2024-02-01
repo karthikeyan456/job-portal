@@ -21,6 +21,7 @@ public class Job {
     private String empid;
     @Id
     private String jobid;
+    private String title;
     private String location;
     private String jobdesc;
     private String sal;
