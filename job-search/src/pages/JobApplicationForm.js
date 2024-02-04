@@ -10,7 +10,8 @@ function JobApplicationForm(){
     let d=useLocation();
     let s=d.state;
     var today=new Date();
-    var da=today.getDate()+"- "+today.getMonth()+1+"- "+today.getFullYear();
+    var mon=today.getMonth()+1;
+    var da=today.getDate()+"- "+mon+"- "+today.getFullYear();
     function submitapplication(){
       fetch("http://127.0.0.1:8080/submitapplication", {
         method:"POST",

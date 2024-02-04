@@ -38,7 +38,7 @@ public class ApplicationController {
         String ids="JPAPP"+Integer.toString(idx);
         ap.setAppid(ids);
         for(Application a:li){
-            if(a.getStudid().equals(ap.getStudid())){
+            if(a.getStudid().equals(ap.getStudid()) &&  a.getJobid().equals(ap.getJobid())){
                 return "APPLICATION ALREADY SUBMITTED";
             }
         }
