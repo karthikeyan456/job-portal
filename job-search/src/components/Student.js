@@ -60,7 +60,7 @@ function Student(){
         <EmpNavbar/>
         <div className="home" style={{ backgroundImage: `url(${BannerImage})` }}>
         <div className="headerContainer">
-          <h1>Student Portal</h1>
+          <h1 >Student Portal</h1>
           <h2 style={{color:"white"}}>Student Name: {data["name"]}</h2>
 
           <h2 style={{color:"white"}}>Student ID: {data["idx"]}</h2>
@@ -77,24 +77,11 @@ function Student(){
 
           <h2 style={{color:"white"}}>Skills: {data["skills"]}</h2>
 
-          <button style={{color:"white"}} onClick={job}>JOBS</button>
+          <button style={{color:"white", fontSize:"15px"}} onClick={job}>JOBS</button>
 
-          <button style={{color:"white",fontSize:"10px"}} onClick={applications}>SUBMITTED APPLICATIONS</button>
+          <button style={{color:"white",fontSize:"15px", width:"300px"}} onClick={applications}>SUBMITTED APPLICATIONS</button>
 
           <button style={{color:"white",fontSize:"15px"}} onClick={update}>UPDATE</button>
-
-
-
-
-
-          
-          
-         
-
-          
-
-
-          
         </div>
       </div>
       </div>

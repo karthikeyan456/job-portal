@@ -22,14 +22,38 @@
   height: 100%;
   display: flex;
   align-items: center;
+  padding-left: 350px;
   justify-content: center;
 }
 
 .navbar a {
-  color: white;
+  color: #ffffff;
   text-decoration: none;
   margin: 20px;
+  display: block;
+  position: relative;
+  padding: 0.2em 0;
 }
+
+/* Fade in */
+.navbar a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0.1em;
+  background-color: rgb(255, 243, 249);
+  opacity: 0;
+  transition: opacity 300ms, transform 300ms;
+}
+
+.navbar a:hover::after,
+.navbar a:focus::after {
+  opacity: 1;
+  transform: translate3d(0, 0.2em, 0);
+}
+---------------------------
 
 .navbar .rightSide button {
   background-color: transparent;

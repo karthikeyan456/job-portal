@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import '../styles/Jobs.css'
 import { useLocation,useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import EmpNavbar from "../components/Empnavbar";
 function JobPost(props){
     return (
     <div className="jobsItem">
@@ -44,7 +45,7 @@ function EmpJobs(){
     }
 
     return(
-        <div> <div><h2 style={{textAlign:"center"}}>Jobs Posted</h2>
+        <div> <EmpNavbar/><div><h2 style={{textAlign:"center",fontFamily:"cursive",fontSize:50}}>Jobs Posted</h2>
            
             {
                 data && <div>

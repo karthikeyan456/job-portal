@@ -21,7 +21,7 @@ function Navbar() {
       <div className="rightSide">
         <Link to="/"> HOME </Link>
         <Link to="/login"> JOBS </Link>
-        <Link to="/login">ABOUT</Link>
+        <Link to="/About">ABOUT</Link>
         <Link to="/login"> LOGIN </Link>
         <Link to="/registration"> REGISTER 
         {/*<select value={selectedOption} onChange={handleOptionChange}>

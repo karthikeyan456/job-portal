@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import '../styles/Jobs.css'
+import EmpNavbar from "../components/Empnavbar";
 import { useLocation,useHistory,Link } from "react-router-dom/cjs/react-router-dom.min";
 function Application(props){
     let history=useHistory();
@@ -49,7 +50,8 @@ function StuApp(){
     }
 
     return(
-        <div> <div><h2 style={{textAlign:"center"}}>Submitted Applications</h2>
+        <div> <EmpNavbar />
+            <div><h2 style={{textAlign:"center",fontFamily:"cursive",fontSize:50}}>Submitted Applications</h2>
            
             {
                 data && <div>
