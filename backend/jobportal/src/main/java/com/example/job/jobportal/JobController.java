@@ -119,6 +119,40 @@ public class JobController {
 
       
     }
+
+    @CrossOrigin
+    @GetMapping("/filter/{l}/{sal}/{exp}")
+    public  List<Map<String,String>> filter(@PathVariable("l") String l,@PathVariable("sal") String sal,@PathVariable("exp") String exp){
+      List<Map<String,String>>ma=new ArrayList<>();
+      List<Job> jl=job.findAll();
+      List<Employer> el=emp.findAll();
+      for(Job j:jl){
+        if(j.getOpen().equals("1")){
+          if(j.getExp().equals(exp) || j.getLocation().equals(l) || j.getSal().equals(sal)){
+          Map<String,String> mp=new HashMap<>();
+          for(Employer i:el){
+            
+            if(i.getIdx().equals(j.getEmpId())){
+                mp.put("name",i.getCname());
+                mp.put("empid",i.getIdx());
+            }
+
+          }
+          mp.put("jobid",j.getJobid());
+          mp.put("location",j.getLocation());
+          mp.put("jobdesc",j.getJobdesc());
+          mp.put("sal",j.getSal());
+          mp.put("exp",j.getExp());
+          mp.put("title",j.getTitle());
+          ma.add(mp);
+        }
+      }
+
+      }
+      return ma;
+
+      
+    }
     
     
 

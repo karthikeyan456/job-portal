@@ -59,6 +59,14 @@ function Student(){
   
       );
     }
+    function gotofilter(){
+      history.push({
+        pathname:"/filter",
+        state:{"id": data['idx']}
+      }
+  
+      );
+    }
 
     function update(){
       history.push({
@@ -98,6 +106,8 @@ function Student(){
           <button style={{color:"white",fontSize:"15px", width:"300px"}} onClick={applications}>SUBMITTED APPLICATIONS</button>
 
           <button style={{color:"white",fontSize:"15px"}} onClick={update}>UPDATE</button>
+
+          <button style={{color:"white",fontSize:"15px"}} onClick={gotofilter}>Filter Jobs</button>
         </div>
       </div>
       </div>

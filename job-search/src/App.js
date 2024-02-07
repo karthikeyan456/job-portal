@@ -17,6 +17,7 @@ import StuJobs from "./pages/StuJobs";
 import StuApp from "./pages/StuApp";
 import StudentUpdate from "./components/StudentUpdate";
 import EmpApp from "./pages/EmpApp";
+import Filter from "./pages/Filter";
 
 
 function App() {
@@ -41,6 +42,7 @@ function App() {
           <Route path="/stuapp" exact component={StuApp}/>
           <Route path="/stuup" exact component={StudentUpdate}/>
           <Route path="/empapp" exact component={EmpApp}/>
+          <Route path="/filter" exact component={Filter}/>
 
 
           

@@ -38,6 +38,23 @@ function StuJobs(){
     let loc=useLocation();
     let d=loc.state;
 
+    const[l,setloc]=useState("");
+    const[sa,setsa]=useState("");
+    const[exp,setexp]=useState("");
+    const[fdata,setfdata]=useState(null);
+    function filterJobs(){
+        fetch("http://127.0.0.1:8080/filter/"+l+"/"+sa+"/"+exp,
+        {            method: "GET",
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+           
+        }
+      ).then((res) => res.json()).then((data) => { setfdata(data) });
+
+    }
+
 
     if(data==null){
         fetch("http://127.0.0.1:8080/fetchalljobs",
@@ -57,6 +74,12 @@ function StuJobs(){
 
     return(
         <div><EmpNavbar /> <div><h2 style={{textAlign:"center", fontFamily:"cursive", fontSize:50}}>Job Listings</h2>
+          
+                
+
+                
+                
+         
            
             {
                 data && <div>
