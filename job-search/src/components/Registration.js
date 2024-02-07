@@ -32,7 +32,7 @@ const Registration = () => {
     {label:"Diploma",value:"Diploma"},
   ];
   const roleoptions=[
-    {label:"Student",value:"student"},
+    {label:"Job Seeker",value:"student"},
     {label:"Employer",value:"employer"},
 
   ]
@@ -161,13 +161,13 @@ const Registration = () => {
         className="basic-single"
         classNamePrefix="select"
         onChange={setrole}
-        defaultValue={"Student"}
+        defaultValue={roleoptions[0]}
         name="Degree"
         options={roleoptions}
          />
     </div>}
     {role.value==="student" && <div className="login-container"> {/*Student Registration*/ }
-      <h2>Register as Student</h2>
+      <h2>Register as Job Seeker</h2>
       <form onSubmit={handleRegistration}>
         <div className="form-group">
           <label>Name:</label>

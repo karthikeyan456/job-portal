@@ -108,6 +108,7 @@ public class ApplicationController {
                         mp.put("skills",s.getSkills());
                         mp.put("inst",s.getInstitution());
                         mp.put("mail",s.getEmail());
+                        mp.put("studid",a.getStudid());
                     }
                 }
                 ma.add(mp);

@@ -30,6 +30,7 @@ function Application(props){
       <p>Branch: {props.branch}</p>
       <p>Status: {props.status}</p>
       <p>Mail: {props.mail}</p>
+      <a href={"http://127.0.0.1:8080/downloadres/"+props.stid}>Get Resume</a>
       <select name="Department" id="Route" onChange={(e) => setsta(e.target.value)}>
             <option value="" disabled selected>Select an option</option>
                                       
@@ -89,6 +90,7 @@ function EmpApp(){
                               branch={i.branch}
                               status={i.status}
                               mail={i.mail}
+                              stid={i.studid}
 
                               
 

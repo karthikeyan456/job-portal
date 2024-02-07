@@ -10,10 +10,10 @@ function Home() {
       <Navbar />
     <div className="home" style={{ backgroundImage: `url(${BannerImage})` }}>
       <div className="headerContainer">
-        <h1> Job's Search Portal</h1>
-        <p> FIND YOUR DREAMS JOB</p>
+        <h1> Job Search Portal</h1>
+        <p> FIND YOUR DREAM JOB</p>
         <Link to="/login">
-          <button> SEARCH JOB </button>
+          <button> LOGIN </button>
         </Link>
       </div>
     </div>

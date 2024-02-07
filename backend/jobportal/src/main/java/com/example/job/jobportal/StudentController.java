@@ -1,14 +1,26 @@
 package com.example.job.jobportal;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.ByteArrayResource;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.UrlResource;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -118,6 +130,46 @@ public class StudentController {
 
 
         return "Updated";
+
+    }
+
+    @CrossOrigin
+    @PostMapping("/uploadres/{id}")
+    public String uploadResume(@RequestParam("file") MultipartFile fi,@PathVariable("id") String id){
+        if(fi.isEmpty()){
+            return "Cannot Upload File";
+        }
+        try {
+            byte[] bytes=fi.getBytes();
+            Path p=Paths.get("src\\main\\resources\\uploads\\"+id+"_resume.pdf");
+            Files.write(p,bytes);
+            
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+        
+        return "File Upload successful";
+    }
+   
+    @CrossOrigin
+    @GetMapping("/downloadres/{id}")
+    public ResponseEntity<Resource> downloadResume(@PathVariable("id") String id){
+          File fi=new File("src\\main\\resources\\uploads\\"+id+"_resume.pdf");
+          Path pa=Paths.get(fi.getAbsolutePath());
+          ByteArrayResource brs;
+        try {
+            brs = new ByteArrayResource(Files.readAllBytes(pa));
+            return ResponseEntity.ok().header(HttpHeaders.CONTENT_DISPOSITION, "attachment;filename=" + fi.getName()).
+            contentLength(fi.length()).contentType(MediaType.APPLICATION_PDF).body(brs);
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        return null;
+          
+          
 
     }
 }

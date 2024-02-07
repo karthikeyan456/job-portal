@@ -9,11 +9,11 @@ import Navbar from './Navbar';
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [role,setrole]=useState({label:"Student",value:"student"});
+  const [role,setrole]=useState({label:"Jobseeker",value:"student"});
   
   const history=useHistory();
   const roleoptions=[
-    {label:"Student",value:"student"},
+    {label:"Job Seeker",value:"student"},
     {label:"Employer",value:"employer"},
 
   ]
