@@ -3,8 +3,8 @@ import '../styles/Login.css';
 import BannerImage from '../assets/bg.avif'
 import {Link,useHistory} from 'react-router-dom'
 import Select from 'react-select';
-import Home from '../pages/Home';
-import Navbar from './Navbar';
+import Home from '../pages/Home.js';
+import Navbar from './Navbar.js';
 
 const Login = () => {
   const [email, setEmail] = useState('');

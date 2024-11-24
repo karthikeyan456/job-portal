@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import BannerImage from "../assets/bg.avif";
 import "../styles/Home.css";
-import Navbar from "../components/Navbar";
+import Navbar from "../components/Navbar.js";
 
 function Home() {
   return (

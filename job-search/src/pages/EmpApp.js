@@ -1,8 +1,8 @@
 import React from "react";
 import { useState } from "react";
 import '../styles/Jobs.css'
-import EmpNavbar from "../components/Empnavbar";
-import { useLocation,useHistory,Link } from "react-router-dom/cjs/react-router-dom.min";
+import EmpNavbar from "../components/Empnavbar.js";
+import { useLocation,useHistory,Link } from "react-router-dom/cjs/react-router-dom.min.js";
 function Application(props){
     let history=useHistory();
     const [sta,setsta]=useState("");

@@ -1,7 +1,7 @@
 import React, { useEffect,useState } from "react";
 import '../styles/Login.css';
 import BannerImage from '../assets/bg.avif';
-import { useLocation } from "react-router-dom/cjs/react-router-dom.min";
+import { useLocation } from "react-router-dom/cjs/react-router-dom.min.js";
 
 function StudentUpdate(){
    

@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import '../styles/Home.css';
 import BannerImage from '../assets/bg.avif'
 import {Link} from 'react-router-dom'
-import EmpNavbar from '../components/Empnavbar';
-import { useLocation } from 'react-router-dom/cjs/react-router-dom.min';
+import EmpNavbar from '../components/Empnavbar.js';
+import { useLocation } from 'react-router-dom/cjs/react-router-dom.min.js';
 
 function JobApplicationForm(){
     var today=new Date();

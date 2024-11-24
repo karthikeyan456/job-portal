@@ -1,7 +1,7 @@
 import React from "react";
 import MultiplePizzas from "../assets/bg.jpg";
 import "../styles/About.css";
-import Navbar from "../components/Navbar";
+import Navbar from "../components/Navbar.js";
 function About() {
   return (
     <div className="about">

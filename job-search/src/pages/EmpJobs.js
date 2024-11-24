@@ -1,8 +1,8 @@
 import React from "react";
 import { useState } from "react";
 import '../styles/Jobs.css'
-import { useLocation,useHistory } from "react-router-dom/cjs/react-router-dom.min";
-import EmpNavbar from "../components/Empnavbar";
+import { useLocation,useHistory } from "react-router-dom/cjs/react-router-dom.min.js";
+import EmpNavbar from "../components/Empnavbar.js";
 function JobPost(props){
     return (
     <div className="jobsItem">

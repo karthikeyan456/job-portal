@@ -1,10 +1,10 @@
 import React, { useEffect,useState } from "react";
-import { Link } from "react-router-dom";
 import BannerImage from "../assets/bg.avif";
 import "../styles/Home.css";
 import { useLocation } from "react-router-dom";
-import EmpNavbar from "../components/Empnavbar";
-import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import EmpNavbar from "./Empnavbar.js";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min.js";
+
 
 
 function Employer(){

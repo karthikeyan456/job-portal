@@ -1,23 +1,25 @@
-import "./App.css";
-import Home from "./pages/Home";
-import Jobs from "./pages/Jobs";
-import About from "./pages/About";
-import Login from "./components/Login";
-import Registration from './components/Registration';
+import React from "react";
+import './App.css';
+
+import Home from "./pages/Home.js";
+import Jobs from "./pages/Jobs.js";
+import About from "./pages/About.js";
+import Login from "./components/Login.js";
+import Registration from './components/Registration.js';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import JobApplicationForm from "./pages/JobApplicationForm";
-import student  from "./components/Student";
-import employer from "./components/Employer";
-import AddJobs from "./pages/AddJobs";
-import EmpAbout from "./pages/EmpAbout";
-import EmpJobs from "./pages/EmpJobs";
-import StuAbout from "./pages/StuAbout";
-import EmployerUpdate from "./components/EmployerUpdate";
-import StuJobs from "./pages/StuJobs";
-import StuApp from "./pages/StuApp";
-import StudentUpdate from "./components/StudentUpdate";
-import EmpApp from "./pages/EmpApp";
-import Filter from "./pages/Filter";
+import JobApplicationForm from "./pages/JobApplicationForm.js";
+import student  from "./components/Student.js";
+import employer from "./components/Employer.js";
+import AddJobs from "./pages/AddJobs.js";
+import EmpAbout from "./pages/EmpAbout.js";
+import EmpJobs from "./pages/EmpJobs.js";
+import StuAbout from "./pages/StuAbout.js";
+import EmployerUpdate from "./components/EmployerUpdate.js";
+import StuJobs from "./pages/StuJobs.js";
+import StuApp from "./pages/StuApp.js";
+import StudentUpdate from "./components/StudentUpdate.js";
+import EmpApp from "./pages/EmpApp.js";
+import Filter from "./pages/Filter.js";
 
 
 function App() {
@@ -43,11 +45,6 @@ function App() {
           <Route path="/stuup" exact component={StudentUpdate}/>
           <Route path="/empapp" exact component={EmpApp}/>
           <Route path="/filter" exact component={Filter}/>
-
-
-          
-
-
         </Switch>
       </Router>
     </div>

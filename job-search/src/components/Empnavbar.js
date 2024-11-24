@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Logo from "../assets/logo.jpg";
 import { Link } from "react-router-dom";
 import "../styles/Navbar.css";
-import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min.js";
 
 function EmpNavbar(props) {
   const [openLinks, setOpenLinks] = useState(false);

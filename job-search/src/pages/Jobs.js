@@ -1,8 +1,8 @@
 import React from "react";
-import { JobsList } from "../helpers/JobsList";
-import JobsItem from "../components/JobsItem";
+import { JobsList } from "../helpers/JobsList.js";
+import JobsItem from "../components/JobsItem.js";
 import '../styles/Jobs.css'
-import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import { Link } from "react-router-dom/cjs/react-router-dom.min.js";
 
 function Jobs() {
   return (
